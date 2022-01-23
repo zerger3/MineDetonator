@@ -44,9 +44,9 @@ namespace MineDetonator
 			_monsters = _monsters.Where(x => x.IsAlive).ToList();
 
 			var nearMonsters = _monsters.Where(x => x != null &&
-				!x.GetComponent<Life>().HasBuff("hidden_monster") && 
-				!x.GetComponent<Life>().HasBuff("avarius_statue_buff") && 
-				!x.GetComponent<Life>().HasBuff("hidden_monster_disable_minions") &&
+				!x.GetComponent<Buffs>().HasBuff("hidden_monster") && 
+				!x.GetComponent<Buffs>().HasBuff("avarius_statue_buff") && 
+				!x.GetComponent<Buffs>().HasBuff("hidden_monster_disable_minions") &&
 				FilterNullAction(x.GetComponent<Actor>()) &&
 				x.GetComponent<Actor>().CurrentAction?.Skill?.Name != "AtziriSummonDemons" &&
 				x.GetComponent<Actor>().CurrentAction?.Skill?.Id != 728 &&//Lab?
